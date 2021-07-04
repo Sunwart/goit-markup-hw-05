@@ -8,6 +8,8 @@
   --titles-color: #212121;
   --additional-color: #afb1b8;
   --card-set-gap: 30px;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --effect-duration: 250ms;
 }
 
 body {
@@ -74,6 +76,8 @@ ul {
   display: inline-block;
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition: color var(--effect-duration) var(--timing-function);
 }
 
 .site-nav:hover,
@@ -92,6 +96,8 @@ ul {
   text-decoration: none;
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition: color var(--effect-duration) var(--timing-function);
 }
 .header-contacts:hover,
 .header-contacts:focus {
@@ -185,6 +191,8 @@ ul {
   cursor: pointer;
   display: inline-block;
   padding: 10px 32px;
+
+  transition: background-color var(--effect-duration) var(--timing-function);
 }
 .order:hover {
   background-color: #188ce8;
@@ -338,6 +346,9 @@ ul {
   height: 100%;
   display: flex;
   justify-content: center;
+
+  transition: background-color var(--effect-duration) var(--timing-function),
+    color var(--effect-duration) var(--timing-function);
 }
 .member-sm-icon:hover {
   color: var(--basic-color);
@@ -364,6 +375,9 @@ ul {
   border: 1px solid var(--additional-color);
   border-radius: 4px;
   padding: 16px 32px;
+
+  transition: color var(--effect-duration) var(--timing-function),
+    border var(--effect-duration) var(--timing-function);
 }
 .client:hover {
   color: var(--brand-color);
@@ -385,6 +399,10 @@ ul {
   border-radius: 4px;
   cursor: pointer;
   padding: 6px 22px;
+
+  transition: color var(--effect-duration) var(--timing-function),
+    background-color var(--effect-duration) var(--timing-function),
+    box-shadow var(--effect-duration) var(--timing-function);
 }
 .center {
   display: flex;
@@ -435,9 +453,12 @@ ul {
 .legend {
   display: block;
   padding: 20px 24px;
+  background-color: var(--basic-color);
   border-bottom: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
+  position: relative;
+  z-index: 1;
 }
 .project {
   display: flex;
@@ -450,13 +471,12 @@ ul {
   flex-basis: calc(100% / 3 - var(--card-set-gap));
   margin-right: var(--card-set-gap);
   margin-bottom: var(--card-set-gap);
+  overflow: hidden;
+  transition: box-shadow var(--effect-duration) var(--timing-function);
 }
 .project-item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-.project-item:hover .description {
-  opacity: 1;
 }
 .description {
   position: absolute;
@@ -473,9 +493,16 @@ ul {
   margin: 0;
   padding: 63px 24px;
   opacity: 0;
-  overflow: auto;
+  transform: translateY(100%);
+
+  transition: transform var(--effect-duration) var(--timing-function),
+    opacity var(--effect-duration) var(--timing-function);
 }
 
+.project-item:hover .description {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* =========== Footer =========== */
 
 .footer {
@@ -517,6 +544,8 @@ ul {
   display: block;
   margin-top: 9px;
   text-decoration: none;
+
+  transition: color var(--effect-duration) var(--timing-function);
 }
 .footer-contacts:hover,
 .footer-contacts:focus {
@@ -546,6 +575,8 @@ ul {
   height: 100%;
   display: flex;
   justify-content: center;
+
+  transition: background-color var(--effect-duration) var(--timing-function);
 }
 .fsm-icon:hover {
   background-color: var(--brand-color);
@@ -559,6 +590,8 @@ ul {
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 500ms var(--timing-function);
 }
 .is-hidden {
   opacity: 0;
@@ -574,7 +607,12 @@ ul {
   border-radius: 4px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform 500ms var(--timing-function);
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.5);
 }
 .close {
   position: absolute;
