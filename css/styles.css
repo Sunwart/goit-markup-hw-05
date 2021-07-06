@@ -493,7 +493,7 @@ ul {
   letter-spacing: 0.03em;
   margin: 0;
   padding: 63px 24px;
-  opacity: 0;
+  visibility: hidden;
   transform: translateY(100%);
 
   transition: transform var(--effect-duration) var(--timing-function),
@@ -501,7 +501,7 @@ ul {
 }
 
 .project-item:hover .description {
-  opacity: 1;
+  visibility: visible;
   transform: translateY(0);
 }
 /* =========== Footer =========== */
