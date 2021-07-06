@@ -350,7 +350,8 @@ ul {
   transition: background-color var(--effect-duration) var(--timing-function),
     color var(--effect-duration) var(--timing-function);
 }
-.member-sm-icon:hover {
+.member-sm-icon:hover,
+.member-sm-icon:focus {
   color: var(--basic-color);
   background-color: var(--brand-color);
 }
@@ -379,7 +380,8 @@ ul {
   transition: color var(--effect-duration) var(--timing-function),
     border var(--effect-duration) var(--timing-function);
 }
-.client:hover {
+.client:hover,
+.client:focus {
   color: var(--brand-color);
   border: 1px solid var(--brand-color);
 }
@@ -578,7 +580,8 @@ ul {
 
   transition: background-color var(--effect-duration) var(--timing-function);
 }
-.fsm-icon:hover {
+.fsm-icon:hover,
+.fsm-icon:focus {
   background-color: var(--brand-color);
 }
 
@@ -596,6 +599,7 @@ ul {
 .is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 .modal {
   position: absolute;
