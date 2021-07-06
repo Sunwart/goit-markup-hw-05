@@ -339,7 +339,6 @@ ul {
   margin-right: 10px;
 }
 .member-sm-icon {
-  display: inline-block;
   border-radius: 50%;
   color: var(--additional-color);
   width: 100%;
