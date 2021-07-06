@@ -9,7 +9,7 @@
   --additional-color: #afb1b8;
   --card-set-gap: 30px;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --effect-duration: 2000ms;
+  --effect-duration: 250ms;
 }
 
 body {
@@ -493,7 +493,7 @@ ul {
   letter-spacing: 0.03em;
   margin: 0;
   padding: 63px 24px;
-  visibility: hidden;
+  opacity: 0;
   transform: translateY(100%);
 
   transition: transform var(--effect-duration) var(--timing-function),
@@ -501,7 +501,7 @@ ul {
 }
 
 .project-item:hover .description {
-  visibility: visible;
+  opacity: 1;
   transform: translateY(0);
 }
 /* =========== Footer =========== */
@@ -598,7 +598,7 @@ ul {
 .is-hidden {
   opacity: 0;
   pointer-events: none;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 .modal {
   position: absolute;
